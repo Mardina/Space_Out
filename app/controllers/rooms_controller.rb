@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except [:show]
+  before_action :authenticate_user!, except: [:show]
   def index
     @rooms = current_user.rooms
   end
@@ -38,6 +38,6 @@ class RoomsController < ApplicationController
   end
 
   def room_params
-    params.require(:room).permit(:address, :description, :capacity, :booking_id, :user_id, :availability_start, :availability_end, :images)
+    params.require(:room).permit(:title, :address, :description, :capacity, :booking_id, :user_id, :availability_start, :availability_end, :images)
   end
 end

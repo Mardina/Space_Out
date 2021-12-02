@@ -1,0 +1,5 @@
+<h1>Pages#Dashboard</h1>
+
+<% if user_signed_in? %>
+  <p>Logged in as:</p><%= current_user.email %>
+<% end %>

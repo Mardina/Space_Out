@@ -1,5 +1,4 @@
 GEM
-  remote: https://rubygems.org/
   specs:
     actioncable (6.0.4.1)
       actionpack (= 6.0.4.1)
@@ -98,8 +97,6 @@ GEM
       activesupport (>= 5.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.11.3)
-      activesupport (>= 5.0.0)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -115,8 +112,6 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.5-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -244,7 +239,6 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass
-  jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   pry-byebug

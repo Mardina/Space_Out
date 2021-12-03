@@ -9,11 +9,11 @@ class RoomsController < ApplicationController
   end
 
   def new
-    @room = current_user.rooms.build
+    @room = current_user.rooms.new
   end
 
   def create
-    @room = current_user.rooms.build(room_params)
+    @room = current_user.rooms.new(room_params)
 
     if @room.save
       redirect_to @room, notice: "Saved"

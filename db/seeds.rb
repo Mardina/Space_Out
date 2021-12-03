@@ -5,13 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
+# require 'faker'
 
-100.times do
-  user = User.create(
-    name: Faker::Name.name,
-    email: Faker::Internet.email,
-    password: Faker::Internet.password
-  )
-  user.save!
-end
+# 100.times do
+#   user = User.create(
+#     name: Faker::Name.name,
+#     email: Faker::Internet.email,
+#     password: Faker::Internet.password
+#   )
+#   user.save!
+# end
+
+puts "creating 1 room"
+Room.new(title: "Meeting room 1", address: "26 Mackenzie St",  description: "nice room", capacity: 4)
+puts "finished"

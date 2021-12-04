@@ -20,12 +20,21 @@ Room.destroy_all
 Booking.destroy_all
 puts "database cleared"
 puts "creating seeds"
-melinda = User.create!(name: 'mel', email: 'mel@gmail.com', password: 'mypassword')
+melinda = User.create!(name: 'mel', email: 'mel@spaceout.com', password: 'mypassword')
 room1 = Room.create!(
-  title: 'meeting room',
-  address: 'mackenzie St',
-  description: 'okk looks good',
-  capacity: '2',
+  title: 'High-End Room',
+  address: 'Mackenzie St',
+  description: 'Amazing meeting room. Great for privacy and secret meetings',
+  capacity: '4',
+  user_id: melinda.id,
+  availability_start: "01-02-2022 10:00",
+  availability_end: "01-02-2022 13:30",
+)
+room2 = Room.create!(
+  title: 'Funky Meetings',
+  address: 'Williamson St, Melbourne',
+  description: 'Perfect for all your random meetings. Get funky in here woo!',
+  capacity: '10',
   user_id: melinda.id,
   availability_start: "01-02-2022 10:00",
   availability_end: "01-02-2022 13:30",

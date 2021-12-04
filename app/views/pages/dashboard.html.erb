@@ -1,16 +1,64 @@
-<h1>Pages#Dashboard</h1>
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+  <h1 class="display-4 fw-normal">Dashboard</h1>
+  <p class="fs-5 text-muted">Check out your bookings and rooms.</p>
+  <% if user_signed_in? %>
+    <p>Logged in as:</p><%= current_user.email %>
+  <% end %>
+</div>
 
-<% if user_signed_in? %>
-  <p>Logged in as:</p><%= current_user.email %>
-<% end %>
+<%# BOOKINGS %>
+<div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Your Bookings</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          Check out room
+        </a>
+      </div>
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          Check out room
+        </a>
+      </div>
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          Check out room
+        </a>
+      </div>
+    </div>
+</div>
 
-<div class="container">
-  <div class="card" id>
-    <h1>Rooms</h1>
-  </div>
-
-  <div class="card">
-    <h1>Rooms</h1>
-  </div>
-
+<%# Meetings Rooms %>
+<div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Your Meeting Rooms</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          Update details
+        </a>
+      </div>
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          Update details
+        </a>
+      </div>
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          More details
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+    </div>
 </div>

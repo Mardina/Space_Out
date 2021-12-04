@@ -5,6 +5,6 @@ class Room < ApplicationRecord
   validates :address, presence: true
   validates :description, length: { maximum: 500 }, presence: true
   validates :capacity, presence: true, numericality: { only_integer: true }
-  validates :availability_start, presence: true, timeliness: { type: :datetime }
-  validates :availability_end, presence: true, timeliness: { type: :datetime }
+  validates :availability_start, presence: true
+  validates :availability_end, presence: true
 end

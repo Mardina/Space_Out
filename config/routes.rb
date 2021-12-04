@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
   root to: 'pages#home'
 
@@ -8,4 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :rooms
+
+  # bookings
+  resources :bookings
 end

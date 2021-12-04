@@ -18,17 +18,29 @@
 
 User.destroy_all
 Room.destroy_all
+Booking.destroy_all
 puts "database cleared"
 puts "creating seeds"
-elana = User.create!(name: 'lana', email: 'elana@gmail.com', password: 'hellohello')
+melinda = User.create!(name: 'mel', email: 'mel@gmail.com', password: 'mypassword')
+>>>>>>> master
 room1 = Room.create!(
   title: 'meeting room',
   address: 'mackenzie St',
   description: 'okk looks good',
   capacity: '2',
+<<<<<<< HEAD
   user_id: elana.id,
   availability_start: Date.today,
   availability_end: Date.tomorrow
 )
 puts room1.title
 puts elana.name
+=======
+  user_id: melinda.id,
+  availability_start: "01-02-2022 10:00",
+  availability_end: "01-02-2022 13:30",
+)
+booking1 = Booking.create(user_id: melinda.id, room_id: room1.id, booking_start: Date.today, booking_end: Date.tomorrow)
+puts room1.title
+puts melinda.name
+>>>>>>> master

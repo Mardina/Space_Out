@@ -16,6 +16,19 @@
 #   user.save!
 # end
 
-puts "creating 1 room"
-Room.new(title: "Meeting room 1", address: "26 Mackenzie St",  description: "nice room", capacity: 4)
-puts "finished"
+User.destroy_all
+Room.destroy_all
+puts "database cleared"
+puts "creating seeds"
+elana = User.create!(name: 'lana', email: 'elana@gmail.com', password: 'hellohello')
+room1 = Room.create!(
+  title: 'meeting room',
+  address: 'mackenzie St',
+  description: 'okk looks good',
+  capacity: '2',
+  user_id: elana.id,
+  availability_start: Date.today,
+  availability_end: Date.tomorrow
+)
+puts room1.title
+puts elana.name

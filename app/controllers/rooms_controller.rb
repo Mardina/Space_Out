@@ -30,9 +30,10 @@ class RoomsController < ApplicationController
       redirect_to @room, notice: "Updated..."
     else
       render :edit
+    end
   end
 
-  pivate
+  private
   def set_room
     @room = Room.find(params[:id])
   end

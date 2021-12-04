@@ -8,7 +8,6 @@ class CreateRooms < ActiveRecord::Migration[6.0]
       t.datetime :availability_start
       t.date :availability_end
       t.references :user, null: false, foreign_key: true
-      t.references :booking, null: false, foreign_key: true
 
       t.timestamps
     end

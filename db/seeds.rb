@@ -30,6 +30,6 @@ room1 = Room.create!(
   availability_start: "01-02-2022 10:00",
   availability_end: "01-02-2022 13:30",
 )
-booking1 = Booking.create(user: melinda.id, room: room1.id, booking_start: Date.today, booking_end: Date.tomorrow)
+booking1 = Booking.create(user_id: melinda.id, room_id: room1.id, booking_start: Date.today, booking_end: Date.tomorrow)
 puts room1.title
 puts melinda.name

@@ -1,9 +1,12 @@
-<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-  <h1 class="display-4 fw-normal">Dashboard</h1>
-  <p class="fs-5 text-muted">Check out your bookings and rooms.</p>
-  <% if user_signed_in? %>
-    <p>Logged in as:</p><%= current_user.email %>
-  <% end %>
+<div class="banner_list">
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('banner_dashboard.jpg') %>)">
+      <div class="container">
+        <h1>Welcome Back!</h1>
+        <% if user_signed_in? %>
+          <p>Logged in as: <%= current_user.email %></p>
+        <% end %>
+      </div>
+  </div>
 </div>
 
 <%# BOOKINGS %>

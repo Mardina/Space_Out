@@ -1,16 +1,67 @@
-<h1>Pages#Dashboard</h1>
-
-<% if user_signed_in? %>
-  <p>Logged in as:</p><%= current_user.email %>
-<% end %>
-
-<div class="container">
-  <div class="card" id>
-    <h1>Rooms</h1>
+<div class="banner_list">
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('banner_dashboard.jpg') %>)">
+      <div class="container">
+        <h1>Welcome Back!</h1>
+        <% if user_signed_in? %>
+          <p>Logged in as: <%= current_user.email %></p>
+        <% end %>
+      </div>
   </div>
+</div>
 
-  <div class="card">
-    <h1>Rooms</h1>
-  </div>
+<%# BOOKINGS %>
+<div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Your Bookings</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          Check out room
+        </a>
+      </div>
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          Check out room
+        </a>
+      </div>
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          Check out room
+        </a>
+      </div>
+    </div>
+</div>
 
+<%# Meetings Rooms %>
+<div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Your Meeting Rooms</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          Update details
+        </a>
+      </div>
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          Update details
+        </a>
+      </div>
+      <div class="feature col">
+        <h2>Room.title</h2>
+        <p>Room.description goes here. Work in progress. Adding more later</p>
+        <a href="#" class="icon-link">
+          More details
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+    </div>
 </div>

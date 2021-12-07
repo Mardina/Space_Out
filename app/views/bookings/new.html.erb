@@ -1,0 +1,10 @@
+
+<div class="container">
+  <h1>Booking Details</h1>
+  <%= simple_form_for [ @room, @booking ] do |f| %>
+    <%= f.input :booking_start, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :booking_end, as: :string, required: false, input_html: { class: "datepicker" } %>
+
+    <%= f.submit "Book", class: "btn btn-primary " %>
+  <% end %>
+</div>

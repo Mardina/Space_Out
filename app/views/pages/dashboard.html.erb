@@ -11,46 +11,33 @@
 
 <%# BOOKINGS %>
 <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Your Bookings</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-    <% @bookings.each do |booking| %>
-      <div class="feature col">
-        <h2><%= booking.room.title %></h2>
-        <p><em><%= booking.booking_start.strftime("Check in: %m/%d/%Y at %I:%M%p") %></em></p>
-        <p><em><%= booking.booking_end.strftime("Check out: %m/%d/%Y at %I:%M%p") %></em></p>
-        <p><%= booking.room.description %></p>
-        <%= link_to "See Room", room_path(booking.room), class: "btn btn-primary" %>
-        </a>
-      </div>
-    <% end %>
+  <h2 class="pb-2 border-bottom">Your Bookings</h2>
+  <% @bookings.each do |booking| %>
+  <div class="card text-center" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="Room Picture">
+    <div class="card-body">
+      <h5 class="card-title"><%= booking.room.title %></h5>
+      <p class="card-text">Check in:</p>
+      <p class="card-subtitle mb-2 text-muted"><%= booking.booking_start.strftime("%m/%d/%Y at %I:%M%p") %></p>
+      <p class="card-text">Check out:</p>
+      <p class="card-subtitle mb-2 text-muted"><%= booking.booking_end.strftime("%m/%d/%Y at %I:%M%p") %></p>
+      <%= link_to "Cancel", room_path(booking.room), method: :delete, class: "btn btn-danger" %>
+      <%= link_to "See Room", room_path(booking.room), class: "btn btn-primary" %>
     </div>
+  <% end %>
+  </div>
 </div>
 
+
 <%# Meetings Rooms %>
-<div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Your Meeting Rooms</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <h2>Room.title</h2>
-        <p>Room.description goes here. Work in progress. Adding more later</p>
-        <a href="#" class="icon-link">
-          Update details
-        </a>
-      </div>
-      <div class="feature col">
-        <h2>Room.title</h2>
-        <p>Room.description goes here. Work in progress. Adding more later</p>
-        <a href="#" class="icon-link">
-          Update details
-        </a>
-      </div>
-      <div class="feature col">
-        <h2>Room.title</h2>
-        <p>Room.description goes here. Work in progress. Adding more later</p>
-        <a href="#" class="icon-link">
-          More details
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
+<div class="container px-4 py-5">
+  <h2 class="pb-2 border-bottom">Your Meeting Rooms</h2>
+  <div class="card text-center" style="width: 18rem;">
+    <img src="<%= asset_path('banner_dashboard.jpg') %>" class="card-img-top" alt="Room Picture">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <%# <%= link_to "Delete", destroy_session_path, method: :delete, class: "btn btn-danger" %> %>
     </div>
+  </div>
 </div>

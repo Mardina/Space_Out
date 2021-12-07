@@ -1,0 +1,17 @@
+// All Primary buttons
+.btn-primary {
+  background-color: $tiffanyBlue;
+  border: $tiffanyBlue;
+}
+.btn-primary:hover {
+  background-color: $darkBlue;
+}
+
+// All Bootstrap Delete buttons
+.btn-danger {
+  background-color: $Red;
+  border: $Red;
+}
+.btn-danger:hover {
+  background-color: $DarkRed;
+}

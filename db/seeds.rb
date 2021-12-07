@@ -132,6 +132,3 @@ room12 = Room.create!(
 )
 
 puts "Finished!"
-
-puts "Creating booking for Melinda"
-booking1 = Booking.create(user_id: melinda.id, room_id: room1.id, booking_start: Date.today, booking_end: Date.tomorrow)

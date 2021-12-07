@@ -1,8 +1,8 @@
 class RoomsController < ApplicationController
-  before_action :set_room, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show]
+  before_action :set_room, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
   def index
-    @rooms = current_user.rooms
+    @rooms = Room.all
   end
 
   def show
@@ -31,6 +31,11 @@ class RoomsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @room.destroy
+    redirect_to rooms_path
   end
 
   private

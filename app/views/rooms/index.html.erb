@@ -12,25 +12,22 @@
             <%# WE CAN ADD MORE LI OPTIONS HERE IF YOU WANT - filter by location?%>
         </ul>
     </div>
-    <div class="col-md-9">
-        <div class="panel panel-default">
-            <div class="panel-body">
+
+        <div class="indexcards">
+            <div class="grid">
                 <% @rooms.each do |room| %>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <%# <%= image_tag room.cover_photo(:thumb) (NOT SURE IF THIS IS THE RIGHT WAY TO CALL IT) %>
-                        </div>
-                        <div class="col-md-7">
-                            <h4><%= room.title %></h4>
-                            <p><%= room.description %></p>
-                        </div>
-                        <div class="col-md-3 right">
-                            <%= link_to "Book now", edit_room_path(room), class: "btn btn-primary" %>
-                        </div>
+                    <article>
+                    <div class="image">
+                      <%= image_tag("Highendroom.png", class: "imgcard", alt: "user image") %>
                     </div>
-                    <hr/>
+                          <div class="text">
+                              <h3><%= room.title %></h3>
+                              <p><%= room.description %></p>
+                              <button style="  text-decoration: none;">
+                                <%= link_to "Book now", edit_room_path(room)%>
+                              </button>
+                          </div>
+                  </article>
                 <% end %>
             </div>
-        </div>
-    </div>
-</div>
+        < </div>

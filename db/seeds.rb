@@ -29,6 +29,7 @@ room1 = Room.create!(
   user_id: melinda.id,
   availability_start: "01-02-2022 10:00",
   availability_end: "01-02-2022 13:30",
+
 )
 room2 = Room.create!(
   title: 'Funky Meetings',
@@ -39,6 +40,27 @@ room2 = Room.create!(
   availability_start: "01-02-2022 10:00",
   availability_end: "01-02-2022 13:30",
 )
+
+room3 = Room.create!(
+  title: 'Calm Meetings',
+  address: 'Bourke St, Melbourne',
+  description: 'A calming space to assist while focussing!',
+  capacity: '10',
+  user_id: melinda.id,
+  availability_start: "12-02-2022 10:00",
+  availability_end: "12-02-2022 13:30",
+)
+
+room4 = Room.create!(
+  title: 'Big Meetings',
+  address: 'Bourke St, Melbourne',
+  description: 'A calming space to assist while focussing!',
+  capacity: '10',
+  user_id: melinda.id,
+  availability_start: "12-02-2022 10:00",
+  availability_end: "12-02-2022 13:30",
+)
+
 booking1 = Booking.create(user_id: melinda.id, room_id: room1.id, booking_start: Date.today, booking_end: Date.tomorrow)
 puts room1.title
 puts melinda.name

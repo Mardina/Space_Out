@@ -16,7 +16,7 @@ puts "creating user account: Melinda"
 melinda = User.create!(name: 'Melinda', email: 'mel@spaceout.com', password: 'mypassword')
 
 puts "creating user account: Elana"
-elana = User.create!(name: 'Elana', email: 'Elana@spaceout.com', password: 'mypassword')
+elana = User.create!(name: 'Elana', email: 'elana@spaceout.com', password: 'mypassword')
 
 puts "creating user account: Mardina"
 mardina = User.create!(name: 'Mardina', email: 'mardina@spaceout.com', password: 'mypassword')

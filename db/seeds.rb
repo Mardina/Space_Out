@@ -27,7 +27,7 @@ room1 = Room.create!(
   address: 'Mackenzie St',
   description: 'Amazing meeting room. Great for privacy and secret meetings',
   capacity: '4',
-  user_id: melinda.id,
+  user_id: elana.id,
   availability_start: "01-02-2023 10:00",
   availability_end: "01-02-2023 13:30",
 )
@@ -36,7 +36,7 @@ room2 = Room.create!(
   address: 'Williamson St, Melbourne',
   description: 'Perfect for all your random meetings. Get funky in here woo!',
   capacity: '8',
-  user_id: melinda.id,
+  user_id: elana.id,
   availability_start: "01-02-2023 10:00",
   availability_end: "01-02-2023 13:30",
 )
@@ -54,7 +54,7 @@ room4 = Room.create!(
   address: 'Hammond St, Melbourne',
   description: 'This small, square room has coordinating wooden and metal furniture. The seating is cushioned at',
   capacity: '12',
-  user_id: melinda.id,
+  user_id: elana.id,
   availability_start: "01-02-2023 10:00",
   availability_end: "01-02-2023 13:30",
 )
@@ -72,7 +72,7 @@ room6 = Room.create!(
   address: 'Brunswick, Melbourne',
   description: 'The room is done in a country theme in warm colors and overall looks very eclectic.',
   capacity: '6',
-  user_id: elana.id,
+  user_id: mardina.id,
   availability_start: "01-12-2021 10:00",
   availability_end: "01-02-2023 13:30",
 )
@@ -108,7 +108,7 @@ room10 = Room.create!(
   address: 'Williamson St, Melbourne',
   description: 'Among the first things one notices walking in is a conspicuous stain on the floor.',
   capacity: '10',
-  user_id: mardina.id,
+  user_id: melinda.id,
   availability_start: "01-12-2021 10:00",
   availability_end: "01-02-2023 13:30",
 )
@@ -117,7 +117,7 @@ room11 = Room.create!(
   address: 'Mackenzie St',
   description: 'The room is done in an oceanic theme in soft colors and overall looks very eclectic. ',
   capacity: '12',
-  user_id: elana.id,
+  user_id: melinda.id,
   availability_start: "01-12-2021 10:00",
   availability_end: "01-02-2023 13:30",
 )
@@ -126,7 +126,7 @@ room12 = Room.create!(
   address: 'Burke St, Melbourne',
   description: 'Among the first things one notices walking in are several houseplants',
   capacity: '10',
-  user_id: elana.id,
+  user_id: melinda.id,
   availability_start: "01-12-2021 10:00",
   availability_end: "01-02-2023 13:30",
 )

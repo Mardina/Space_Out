@@ -1,7 +1,9 @@
-<div class="container py-5">
-<h1 class="text-center"><%= @room.title %></h1>
-  <div class="container py-5">
-    <%# images tag here %>
+<div class="container py-5 text-center">
+  <h1><%= @room.title %></h1>
+  <div class="py-5">
+    <img src="<%= @room.image_url %>" style="width: 40rem;" alt="Room Picture">
+  </div>
+  <div>
     <h3>Capacity</h3>
     <p><%= @room.capacity %></p>
     <h3>Description</h3>

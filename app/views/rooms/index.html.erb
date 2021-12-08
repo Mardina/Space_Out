@@ -18,7 +18,7 @@
                 <% @rooms.each do |room| %>
                     <div class="row">
                         <div class="col-md-2">
-                            <%# <%= image_tag room.cover_photo(:thumb) (NOT SURE IF THIS IS THE RIGHT WAY TO CALL IT) %>
+                            <img src="<%= room.image_url %>" style="width: 14rem;" alt="Room Picture">
                         </div>
                         <div class="col-md-7">
                             <h4><%= room.title %></h4>

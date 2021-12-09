@@ -1,2 +1,12 @@
 <h1>Rooms#edit</h1>
+<%= simple_form_for(@room) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :address %>
+  <%= f.input :capacity %>
+  <%= f.input :description %>
+  <%= f.input :availability_start %>
+  <%= f.input :availability_end %>
+  <%= f.input :image_url %>
+  <%= f.submit %>
+<% end %>
 <p>Find me in app/views/rooms/edit.html.erb</p>

@@ -24,4 +24,5 @@
     <p>To: <%= @room.availability_end.strftime("%m/%d/%Y at %I:%M%p") %></p>
   </div>
   <div class="text-center"><%= link_to 'Return to Meeting Spaces', rooms_path, class: "btn btn-primary" %></div>
+  <%= link_to "Book now", new_room_booking_path(@room), class: "btn btn-primary"%>
 </div>

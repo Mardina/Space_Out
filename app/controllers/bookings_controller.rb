@@ -25,12 +25,12 @@ class BookingsController < ApplicationController
   end
 
   def update
-  if @booking.update(booking_params)
-    redirect_to @booking, notice: "Updated..."
-  else
-    render :edit
+    if @booking.update(booking_params)
+      redirect_to @booking, notice: "Updated..."
+    else
+      render :edit
+    end
   end
-
 
   private
 

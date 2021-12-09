@@ -41,3 +41,4 @@ class BookingsController < ApplicationController
   def booking_params
     params[:booking].permit(:user_id, :room_id, :booking_start, :booking_end)
   end
+end

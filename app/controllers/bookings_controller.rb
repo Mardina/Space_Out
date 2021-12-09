@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
-  before_action :set_booking, only: [ :new, :create, :show ]
+  before_action :set_booking, only: [ :show, :destroy ]
 
   def index
     @bookings = current_user.bookings
@@ -10,17 +10,18 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = current_user.bookings.build
+    @room = Room.find(params[:room_id])
+    @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.booking = Booking.find(params[:booking_id])
+    @booking.room = Room.find(params[:room_id])
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to dashboard_path
     else
-      render 'bookings/show'
+      render 'bookings/new'
     end
   end
 
@@ -32,6 +33,14 @@ class BookingsController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
+=======
+  def destroy
+    @booking.destroy
+    redirect_to dashboard_path
+  end
+
+>>>>>>> e146b545056837306a33459b6746e9ee28f56551
   private
 
   def set_booking

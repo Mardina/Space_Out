@@ -1,64 +1,50 @@
-<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-  <h1 class="display-4 fw-normal">Dashboard</h1>
-  <p class="fs-5 text-muted">Check out your bookings and rooms.</p>
-  <% if user_signed_in? %>
-    <p>Logged in as:</p><%= current_user.email %>
-  <% end %>
+<div class="banner_list">
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('banner_dashboard.jpg') %>)">
+      <div class="container">
+        <h1>Welcome back <%= current_user.name.capitalize %>!</h1>
+        <% if user_signed_in? %>
+          <p>Logged in as: <%= current_user.email %></p>
+        <% end %>
+        <div class="py-5">
+          <%= link_to '➕ New Meeting Space', new_room_path, class: "btn btn-light" %>
+        </div>
+      </div>
+  </div>
 </div>
 
 <%# BOOKINGS %>
-<div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Your Bookings</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <h2>Room.title</h2>
-        <p>Room.description goes here. Work in progress. Adding more later</p>
-        <a href="#" class="icon-link">
-          Check out room
-        </a>
+<div class="container px-4 py-5">
+  <h2 class="pb-2 border-bottom">Your Bookings</h2>
+    <% @bookings.each do |booking| %>
+    <div class="card " style="width: 18rem;">
+      <img src="<%= booking.room.image_url %>" class="card-img-top" alt="Room Picture">
+      <div class="card-body text-center">
+        <h5 class="card-title"><%= booking.room.title %></h5>
+        <p>Check in:</p>
+        <p class="mb-2 text-muted"><%= booking.booking_start.strftime("%m/%d/%Y at %I:%M%p") %></p>
+        <p>Check out:</p>
+        <p class="mb-2 text-muted"><%= booking.booking_end.strftime("%m/%d/%Y at %I:%M%p") %></p>
+        <%= link_to "Cancel", room_path(booking.room), method: :delete, class: "btn btn-danger" %>
+        <%= link_to "See Room", room_path(booking.room), class: "btn btn-primary" %>
       </div>
-      <div class="feature col">
-        <h2>Room.title</h2>
-        <p>Room.description goes here. Work in progress. Adding more later</p>
-        <a href="#" class="icon-link">
-          Check out room
-        </a>
-      </div>
-      <div class="feature col">
-        <h2>Room.title</h2>
-        <p>Room.description goes here. Work in progress. Adding more later</p>
-        <a href="#" class="icon-link">
-          Check out room
-        </a>
-      </div>
+    <% end %>
     </div>
 </div>
 
+
 <%# Meetings Rooms %>
-<div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Your Meeting Rooms</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <h2>Room.title</h2>
-        <p>Room.description goes here. Work in progress. Adding more later</p>
-        <a href="#" class="icon-link">
-          Update details
-        </a>
-      </div>
-      <div class="feature col">
-        <h2>Room.title</h2>
-        <p>Room.description goes here. Work in progress. Adding more later</p>
-        <a href="#" class="icon-link">
-          Update details
-        </a>
-      </div>
-      <div class="feature col">
-        <h2>Room.title</h2>
-        <p>Room.description goes here. Work in progress. Adding more later</p>
-        <a href="#" class="icon-link">
-          More details
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
-        </a>
+<div class="container px-4 py-5">
+  <h2 class="pb-2 border-bottom">Your Meeting Rooms</h2>
+  <% @rooms.each do |room| %>
+    <div class="card text-center" style="width: 18rem;">
+      <img src="<%= room.image_url %>" class="card-img-top" alt="Room Picture">
+      <div class="card-body">
+        <h5 class="card-title"><%= room.title %></h5>
+        <p class="card-text"><%= room.description %></p>
+        <%= link_to "Delete", room_path(room), method: :delete, class: "btn btn-danger" %>
+        <%# Update button should have method: :patch? %>
+        <%= link_to "Update", room_path(room), class: "btn btn-primary" %>
       </div>
     </div>
+  <% end %>
 </div>

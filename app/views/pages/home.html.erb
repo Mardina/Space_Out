@@ -1,33 +1,30 @@
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-normal">Space Out</h1>
-      <p class="lead fw-normal">Welcome to Space Out. The best place to find rooms and spaces to run your meetings and workshops.</p>
-      <%= link_to 'Search Spaces', rooms_path, class: "btn btn-outline-secondary" %>
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
+<div class="banner_list">
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('banner_home.jpeg') %>)">
+      <div class="container">
+        <h1>Space Out</h1>
+        <p>Welcome to Space Out. The best place to find rooms and spaces to run your meetings and workshops.</p>
+        <%= link_to 'Search Spaces', rooms_path, class: "btn btn-light" %>
+      </div>
   </div>
-
-<% if user_signed_in? %>
-  <%= current_user.email %>
-<% end %>
+</div>
 
 <div class="container">
   <h2 class="text-center">More in the area</h2>
-    <div class="cards">
+    <div class="cards-rooms">
 
-      <div class="card">
-        <img src="(<%= asset_path 'meeting_room_7.jpeg'%>);" alt="">
+      <div class="card2">
+        <%# <img src="(<%= asset_path 'meeting_room_7.jpeg'%>);" alt=""> %>
         <h4>Boardroom</h4>
         <p>Catering included</p>
       </div>
 
-      <div class="card">
+      <div class="card1">
         <img src="images/travelfriends.jpg" alt="">
         <h4>Creative Spaces</h4>
         <p>Loungers</p>
       </div>
 
-      <div class="card">
+      <div class="card2">
         <img src="images/nature.jpg" alt="">
         <h4>High Tech</h4>
         <p>Presenters Dream</p>

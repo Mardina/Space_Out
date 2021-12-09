@@ -16,30 +16,14 @@
         <div class="indexcards">
             <div class="grid">
                 <% @rooms.each do |room| %>
-<<<<<<< HEAD
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img src="<%= room.image_url  %>" style="width: 14rem;" alt="Room Picture">
-                        </div>
-                        <div class="col-md-7">
-                            <h4><%= room.title %></h4>
-                            <p><%= room.description %></p>
-                        </div>
-                        <div class="col-md-3 right">
-                            <%= link_to "Book now", new_room_booking_path(room), class: "btn btn-primary" %>
-                        </div>
-=======
                     <article>
                     <div class="image">
-                      <%= image_tag("Highendroom.png", class: "imgcard", alt: "user image") %>
->>>>>>> master
+                      <img src="<%= room.image_url %>" class="imgcard" alt="Room Picture">
                     </div>
                           <div class="text">
                               <h3><%= room.title %></h3>
                               <p><%= room.description %></p>
-                              <button style="  text-decoration: none;">
-                                <%= link_to "Book now", edit_room_path(room)%>
-                              </button>
+                                <%= link_to "Book now", new_room_booking_path(room), class: "btn btn-primary"%>
                           </div>
                   </article>
                 <% end %>

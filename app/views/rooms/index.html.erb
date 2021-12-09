@@ -18,14 +18,12 @@
                 <% @rooms.each do |room| %>
                     <article>
                     <div class="image">
-                      <%= image_tag("Highendroom.png", class: "imgcard", alt: "user image") %>
+                      <img src="<%= room.image_url %>" class="imgcard" alt="Room Picture">
                     </div>
                           <div class="text">
                               <h3><%= room.title %></h3>
                               <p><%= room.description %></p>
-                              <button style="  text-decoration: none;">
-                                <%= link_to "Book now", edit_room_path(room)%>
-                              </button>
+                                <%= link_to "Book now", new_room_booking_path(room), class: "btn btn-primary"%>
                           </div>
                   </article>
                 <% end %>

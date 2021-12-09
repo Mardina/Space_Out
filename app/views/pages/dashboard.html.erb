@@ -17,7 +17,7 @@
   <h2 class="pb-2 border-bottom">Your Bookings</h2>
     <% @bookings.each do |booking| %>
     <div class="card " style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="Room Picture">
+      <img src="<%= booking.room.image_url %>" class="card-img-top" alt="Room Picture">
       <div class="card-body text-center">
         <h5 class="card-title"><%= booking.room.title %></h5>
         <p>Check in:</p>

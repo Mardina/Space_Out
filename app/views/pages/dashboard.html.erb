@@ -5,39 +5,46 @@
         <% if user_signed_in? %>
           <p>Logged in as: <%= current_user.email %></p>
         <% end %>
+        <div class="py-5">
+          <%= link_to '➕ New Meeting Space', new_room_path, class: "btn btn-light" %>
+        </div>
       </div>
   </div>
 </div>
 
 <%# BOOKINGS %>
-<div class="container px-4 py-5" id="featured-3">
+<div class="container px-4 py-5">
   <h2 class="pb-2 border-bottom">Your Bookings</h2>
-  <% @bookings.each do |booking| %>
-  <div class="card text-center" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="Room Picture">
-    <div class="card-body">
-      <h5 class="card-title"><%= booking.room.title %></h5>
-      <p class="card-text">Check in:</p>
-      <p class="card-subtitle mb-2 text-muted"><%= booking.booking_start.strftime("%m/%d/%Y at %I:%M%p") %></p>
-      <p class="card-text">Check out:</p>
-      <p class="card-subtitle mb-2 text-muted"><%= booking.booking_end.strftime("%m/%d/%Y at %I:%M%p") %></p>
-      <%= link_to "Cancel", room_path(booking.room), method: :delete, class: "btn btn-danger" %>
-      <%= link_to "See Room", room_path(booking.room), class: "btn btn-primary" %>
+    <% @bookings.each do |booking| %>
+    <div class="card " style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="Room Picture">
+      <div class="card-body text-center">
+        <h5 class="card-title"><%= booking.room.title %></h5>
+        <p>Check in:</p>
+        <p class="mb-2 text-muted"><%= booking.booking_start.strftime("%m/%d/%Y at %I:%M%p") %></p>
+        <p>Check out:</p>
+        <p class="mb-2 text-muted"><%= booking.booking_end.strftime("%m/%d/%Y at %I:%M%p") %></p>
+        <%= link_to "Cancel", room_path(booking.room), method: :delete, class: "btn btn-danger" %>
+        <%= link_to "See Room", room_path(booking.room), class: "btn btn-primary" %>
+      </div>
+    <% end %>
     </div>
-  <% end %>
-  </div>
 </div>
 
 
 <%# Meetings Rooms %>
 <div class="container px-4 py-5">
   <h2 class="pb-2 border-bottom">Your Meeting Rooms</h2>
-  <div class="card text-center" style="width: 18rem;">
-    <img src="<%= asset_path('banner_dashboard.jpg') %>" class="card-img-top" alt="Room Picture">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <%# <%= link_to "Delete", destroy_session_path, method: :delete, class: "btn btn-danger" %> %>
+  <% @rooms.each do |room| %>
+    <div class="card text-center" style="width: 18rem;">
+      <img src="<%= room.image_url %>" class="card-img-top" alt="Room Picture">
+      <div class="card-body">
+        <h5 class="card-title"><%= room.title %></h5>
+        <p class="card-text"><%= room.description %></p>
+        <%= link_to "Delete", room_path(room), method: :delete, class: "btn btn-danger" %>
+        <%# Update button should have method: :patch? %>
+        <%= link_to "Update", room_path(room), class: "btn btn-primary" %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

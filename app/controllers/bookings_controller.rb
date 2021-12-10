@@ -33,14 +33,11 @@ class BookingsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
-=======
   def destroy
     @booking.destroy
     redirect_to dashboard_path
   end
 
->>>>>>> e146b545056837306a33459b6746e9ee28f56551
   private
 
   def set_booking

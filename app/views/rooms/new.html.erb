@@ -1,2 +1,15 @@
-<h1>Rooms#new</h1>
-<p>Find me in app/views/rooms/new.html.erb</p>
+<div class="banner-list container py-5">
+  <h1 class="pb-2 border-bottom">New Room</h1>
+  <div class="py-4">
+    <%= simple_form_for(@room) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :address %>
+      <%= f.input :capacity %>
+      <%= f.input :description %>
+      <%= f.input :availability_start %>
+      <%= f.input :availability_end %>
+      <%= f.input :image_url %>
+      <%= f.submit 'Save', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

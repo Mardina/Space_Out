@@ -6,21 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # require 'faker'
-
 User.destroy_all
 Room.destroy_all
 Booking.destroy_all
 puts "database cleared"
-
 puts "creating user account: Melinda"
 melinda = User.create!(name: 'Melinda', email: 'mel@spaceout.com', password: 'mypassword')
-
 puts "creating user account: Elana"
 elana = User.create!(name: 'Elana', email: 'elana@spaceout.com', password: 'mypassword')
-
 puts "creating user account: Mardina"
 mardina = User.create!(name: 'Mardina', email: 'mardina@spaceout.com', password: 'mypassword')
-
 puts "Creating 12 meeting rooms"
 room1 = Room.create!(
   title: 'High-End Room',
@@ -142,5 +137,4 @@ room12 = Room.create!(
   availability_end: "01-02-2023 13:30",
   image_url: 'https://images.unsplash.com/photo-1631130650210-e3863c8d9f8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80'
 )
-
 puts "Finished!"

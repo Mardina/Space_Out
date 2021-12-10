@@ -1,11 +1,11 @@
 <div class="banner_list">
   <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('banner_rooms.jpg') %>)">
       <div class="container">
-        <h1>All our beautiful meeting spaces</h1>
+        <h1>All our meeting spaces</h1>
   </div>
 </div>
 
-<div class="row">
+<div class="r<link rel="stylesheet" href="https://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />ow">
     <div class="col-md-3">
         <ul class="sidebar-list">
             <li class="sidebar-item"><%= link_to "Filters:", rooms_path, class: "sidebar-link active" %></li>
@@ -18,12 +18,14 @@
                 <% @rooms.each do |room| %>
                     <article>
                     <div class="image">
+                    <%= link_to room_path(room) do %>
                       <img src="<%= room.image_url %>" class="imgcard" alt="Room Picture">
+                      <% end %>
                     </div>
                           <div class="text">
                               <h3><%= room.title %></h3>
                               <p><%= room.description %></p>
-                                <%= link_to "Book now", new_room_booking_path(room), class: "btn btn-primary"%>
+                                <%= link_to "Book now", new_room_booking_path(room), class: "btn btn-block btn-primary mb-auto"%>
                           </div>
                   </article>
                 <% end %>

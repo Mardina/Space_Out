@@ -8,23 +8,17 @@
   </div>
 </div>
 
-<div class="container">
-  <h2 class="text-center">More in the area</h2>
-    <div class="cards-rooms">
-
-      <div class="card2">
-        <h4>Boardroom</h4>
-        <p>Catering included</p>
-      </div>
-
-      <div class="card1">
-        <h4>Creative Spaces</h4>
-        <p>Loungers</p>
-      </div>
-
-      <div class="card2">
-        <h4>High Tech</h4>
-        <p>Presenters Dream</p>
+<div class="container px-4 py-5">
+  <h2 class="pb-2 border-bottom">Our highly rated spaces</h2>
+  <div class="row">
+  <% @rooms[0..2].each do |room| %>
+    <div class="card text-center mx-3 my-3" style="width: 18rem;">
+      <img src="<%= room.image_url %>" class="card-img-top" alt="Room Picture">
+      <div class="card-body">
+        <h5 class="card-title"><%= room.title %></h5>
+        <p class="card-text text-muted"><%= room.description %></p>
       </div>
     </div>
+  <% end %>
+  </div>
 </div>

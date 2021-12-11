@@ -1,15 +1,45 @@
-.indexcards {
-  display: flex;
-  justify-content: center;
-  margin-top: 8px;
+.search-form{
+  margin: 20px;
 }
 
-.btn{
-  margin-top: auto;
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
-.imgcard {
+
+.indexcards {
+  display: flex;
+  // justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
   width: 100%;
-  border-radius: 8px;
+  flex-direction: column;
+  // position: relative;
+}
+
+.special-btn{
+  position:absolute;
+  margin-bottom: 12px;
+  bottom:0;
+  margin-left: 12px;
+  margin-right: 12px;
+  left: 0;
+  right: 0;
+  text-align: center;
+
+  .center {
+  width: 200px;
+  height: 200px;
+  background: #0088cc;
+  display: flex;
+  align-items: flex-end;
+  }
+}
+
+.imgcard {
+  border-radius: 4px 4px 0 0;
   cursor: pointer;
   width: 100%;
   height: 20vw;
@@ -23,8 +53,8 @@
   grid-gap: 30px;
   padding: 12px;
   margin-left: 12px;
+  margin-right: 12px;
   align-items: center;
-
 }
 
 .grid > article{
@@ -35,6 +65,7 @@
   transition: transform .3s;
   width: 100%;
   height: 100%;
+                  position:relative;
 
 }
 
@@ -49,41 +80,37 @@
 .text {
   // top, right, bottom, left
   padding: 10px 20px 20px;
+  text-align: center;
 }
+
 
 .text h3{
   text-transform: uppercase;
   font-weight: 400;
 }
 
-// .text button{
-//   background: #0ABAB5;
-//   border-radius: 20px;
-//   border: none;
-//   color: #fff;
-//   padding: 10px;
-//   width: 100%;
-//   font-weight: 600;
-//   text-transform: uppercase;
-//   cursor: pointer;
-// }
+.text-muted{
+  padding-bottom: 20px;
+}
 
 
-// a:link {text-decoration: none;}
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px){
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+@media (max-width: 500px){
+  .grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
 
-// @media (max-width: 768px){
-//   .grid{
-//     grid-template-columns: repeat(2, 1fr);
-//   }
-// }
-
-// @media (max-width: 500px){
-//   .grid{
-//     grid-template-columns: repeat(1, 1fr);
-//   }
-
-//   .grid >article{
-//     text-align: center;
-//   }
-// }
+  .grid >article{
+    text-align: center;
+  }
+}

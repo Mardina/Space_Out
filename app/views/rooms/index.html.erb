@@ -24,9 +24,9 @@
                     </div>
                           <div class="text">
                               <h3><%= room.title %></h3>
-                              <p><%= room.description %></p>
-                                <%= link_to "Book now", new_room_booking_path(room), class: "btn btn-block btn-primary mb-auto"%>
+                              <p class="text-muted"><%= room.description %></p>
                           </div>
+                                <%= link_to "Book now", new_room_booking_path(room), class: "btn btn-block btn-primary mb-auto"%>
                   </article>
                 <% end %>
             </div>

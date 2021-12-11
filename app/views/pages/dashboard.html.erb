@@ -43,7 +43,7 @@
       <img src="<%= room.image_url %>" class="card-img-top" alt="Room Picture">
       <div class="card-body">
         <h5 class="card-title"><%= room.title %></h5>
-        <p class="card-text"><%= room.description %></p>
+        <p class="card-text text-muted"><%= room.description %></p>
         <%= link_to "Delete", room_path(room), method: :delete, class: "btn btn-danger" %>
         <%# Update button should have method: :patch? %>
         <%= link_to "Update", edit_room_path(room), class: "btn btn-primary" %>
